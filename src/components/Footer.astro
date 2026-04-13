@@ -1,0 +1,88 @@
+---
+import { NAV_FOOTER_TRUST, SITE } from '../data/site';
+---
+
+<footer class="footer">
+	<div class="container footer__grid">
+		<div>
+			<div class="footer__brand">{SITE.name}</div>
+			<p class="muted footer__desc">{SITE.tagline}</p>
+			<p class="muted footer__tiny">
+				Незалежний редакційний ресурс. Сайт може містити партнерські посилання — детальніше в
+				<a href="/affiliate-disclaimer/">Affiliate Disclaimer</a>.
+			</p>
+		</div>
+
+		<div>
+			<div class="footer__h">Звʼязок</div>
+			<p class="muted">
+				Email:
+				<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+			</p>
+		</div>
+
+		<div>
+			<div class="footer__h">Документи</div>
+			<ul class="footer__list">
+				{
+					NAV_FOOTER_TRUST.map((l) => (
+						<li>
+							<a href={l.href}>{l.label}</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+	<div class="container footer__bottom muted">© {new Date().getFullYear()} {SITE.name}. Домен: {SITE.domain}</div>
+</footer>
+
+<style>
+	.footer {
+		margin-top: 56px;
+		border-top: 1px solid var(--line);
+		background: color-mix(in oklab, var(--surface) 88%, var(--bg));
+		padding: 34px 0 18px;
+	}
+	.footer__grid {
+		display: grid;
+		gap: 18px;
+		grid-template-columns: 1.4fr 0.8fr 0.8fr;
+	}
+	@media (max-width: 900px) {
+		.footer__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	.footer__brand {
+		font-weight: 900;
+		letter-spacing: -0.02em;
+		margin-bottom: 8px;
+	}
+	.footer__desc {
+		margin: 0 0 10px;
+		max-width: 52ch;
+	}
+	.footer__tiny {
+		margin: 0;
+		font-size: 13px;
+		max-width: 62ch;
+	}
+	.footer__h {
+		font-weight: 800;
+		margin-bottom: 10px;
+	}
+	.footer__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 8px;
+	}
+	.footer__bottom {
+		margin-top: 22px;
+		padding-top: 16px;
+		border-top: 1px solid var(--line);
+		font-size: 13px;
+	}
+</style>

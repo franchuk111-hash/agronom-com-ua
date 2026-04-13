@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+
+export const prerender = true;
+
+const title = `Сторінку не знайдено | ${SITE.name}`;
+const description = 'Можливо, посилання застаріло. Поверніться на головну або скористайтесь меню.';
+const canonicalPath = '/404/';
+---
+
+<BaseLayout {title} {description} {canonicalPath} robots="noindex, nofollow">
+	<section class="container wrap">
+		<h1>Сторінку не знайдено</h1>
+		<p class="muted">Спробуйте почати з головної або розділу «Матеріали».</p>
+		<div class="cta">
+			<a class="btn btn-primary" href="/">На головну</a>
+			<a class="btn" href="/blog/">Матеріали</a>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.wrap {
+		padding: 44px 0 60px;
+	}
+	.wrap h1 {
+		margin: 0 0 10px;
+		color: var(--green-900);
+		letter-spacing: -0.02em;
+	}
+	.cta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 14px;
+	}
+</style>

@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliatePanel from '../components/AffiliatePanel.astro';
+import { SITE } from '../data/site';
+
+export const prerender = true;
+
+const title = `${SITE.name} — гід по саду, городу та покупках рослин в Україні`;
+const description = SITE.defaultDescription;
+const canonicalPath = '/';
+
+const popular = [
+	{ href: '/sadzhantsi/', label: 'Саджанці' },
+	{ href: '/nasinnia/', label: 'Насіння' },
+	{ href: '/dobryva/', label: 'Добрива' },
+	{ href: '/kvity/', label: 'Квіти' },
+	{ href: '/yahidni-kultury/', label: 'Ягоди' },
+	{ href: '/sezonni-porady/', label: 'Сезонні роботи' },
+] as const;
+
+const categories = [
+	{ href: '/sadzhantsi/', label: 'Саджанці', desc: 'Дерева, ягідники, троянди: вибір і посадка.' },
+	{ href: '/nasinnia/', label: 'Насіння', desc: 'Город і квітник: строки, якість, розсада.' },
+	{ href: '/dobryva/', label: 'Добрива', desc: 'Підживлення без зайвого шуму — по сезону.' },
+	{ href: '/instrumenty/', label: 'Інструменти', desc: 'Базовий інвентар без зайвих покупок.' },
+	{ href: '/kvity/', label: 'Квіти', desc: 'Клумба, вазон, троянди: спокійний догляд.' },
+	{ href: '/yahidni-kultury/', label: 'Ягідні культури', desc: 'Лохина, смородина, малина — практично.' },
+	{ href: '/dekoratyvni-roslyny/', label: 'Декор', desc: 'Структура насаджень і «дорослий» сад.' },
+	{ href: '/kimnatni-roslyny/', label: 'Кімнатні', desc: 'Світло, полив, ґрунт — база успіху.' },
+	{ href: '/zasoby-zakhystu/', label: 'Захист рослин', desc: 'Режими, інструкції, без паніки.' },
+] as const;
+
+const guides = [
+	{ href: '/yak-obraty-sadzhantsi/', label: 'Як обрати саджанці' },
+	{ href: '/yak-obraty-nasinnia-dlia-horodu/', label: 'Як обрати насіння для городу' },
+	{ href: '/yake-dobryvo-dlia-pomidoriv/', label: 'Яке добриво для помідорів' },
+] as const;
+
+const seasonal = [
+	{ href: '/sezonni-porady/shcho-sadyty-navesni/', label: 'Що садити навесні' },
+	{ href: '/sezonni-porady/shcho-sadyty-voseni/', label: 'Що садити восени' },
+	{ href: '/sezonni-porady/najkrashchi-dobryva-na-vesnu/', label: 'Добрива на весну' },
+	{ href: '/sezonni-porady/shcho-siiaty-u-berezni/', label: 'Що сіяти у березні' },
+] as const;
+---
+
+<BaseLayout {title} {description} {canonicalPath}>
+	<section class="container hero">
+		<h1>Все для саду та городу: як обрати рослини, насіння і добрива</h1>
+		<p class="muted hero__lead">
+			Практичні гіди для дачі та ділянки: вибір, сезонність, догляд — і чесні підказки, де перевірити ціни без
+			тиску.
+		</p>
+		<div class="hero__cta">
+			<a class="btn btn-primary" href="/blog/">Перейти до матеріалів</a>
+			<a class="btn" href="/de-kupyty/">Де купити зараз</a>
+		</div>
+		<p class="muted hero__trust">
+			Незалежний редакційний ресурс. Можемо використовувати партнерські посилання — деталі в
+			<a href="/affiliate-disclaimer/">Affiliate Disclaimer</a>.
+		</p>
+	</section>
+
+	<section class="container section" aria-label="Популярні напрямки">
+		<h2 class="h2">Що шукають найчастіше</h2>
+		<div class="grid grid-3 tiles">
+			{
+				popular.map((x) => (
+					<a class="tile card" href={x.href}>
+						<div class="tile__t">{x.label}</div>
+						<div class="tile__m muted">Швидкий перехід до розділу</div>
+					</a>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="container section" aria-label="Категорії">
+		<h2 class="h2">Категорії</h2>
+		<div class="grid grid-3 tiles">
+			{
+				categories.map((x) => (
+					<a class="tile card" href={x.href}>
+						<div class="tile__t">{x.label}</div>
+						<div class="tile__m muted">{x.desc}</div>
+					</a>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="container section" aria-label="Сезонні рішення">
+		<h2 class="h2">Сезонні рішення</h2>
+		<div class="grid grid-2 tiles">
+			{
+				seasonal.map((x) => (
+					<a class="tile card" href={x.href}>
+						<div class="tile__t">{x.label}</div>
+						<div class="tile__m muted">Коротко і по суті — під український сезон</div>
+					</a>
+				))
+			}
+		</div>
+		<p class="muted">
+			Більше календарних підказок — у розділі <a href="/sezonni-porady/">«Сезонні поради»</a>.
+		</p>
+	</section>
+
+	<section class="container section" aria-label="Гіди по вибору">
+		<h2 class="h2">Гіди по вибору</h2>
+		<ul class="list">
+			{
+				guides.map((g) => (
+					<li>
+						<a href={g.href}>{g.label}</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="container section" aria-label="Де купити">
+		<h2 class="h2">Де купити</h2>
+		<p class="muted">
+			Ми не магазин: допомагаємо підготувати список і критерії якості. Далі — перевірка наявності у партнерських
+			магазинах.
+		</p>
+		<div class="section__panel">
+			<AffiliatePanel scope="home_dekupyty" heading="Перевірити асортимент у партнерів" />
+		</div>
+		<p class="muted">
+			Хаб порівнянь — <a href="/porivniannia/">«Порівняння»</a>, зокрема
+			<a href="/porivniannia/florium-vs-agromarket/">«Флоріум vs Агромаркет»</a>.
+		</p>
+	</section>
+
+	<section class="container section" aria-label="Короткі відповіді">
+		<h2 class="h2">FAQ</h2>
+		<p class="muted">
+			Зібрали відповіді на базові питання про проєкт і партнерські посилання — у розділі <a href="/faq/">FAQ</a>.
+		</p>
+	</section>
+</BaseLayout>
+
+<style>
+	.hero {
+		padding: 18px 0 10px;
+	}
+	.hero h1 {
+		margin: 0 0 12px;
+		font-size: clamp(28px, 4vw, 46px);
+		line-height: 1.12;
+		letter-spacing: -0.03em;
+		color: var(--green-900);
+		max-width: 22ch;
+	}
+	.hero__lead {
+		margin: 0 0 14px;
+		max-width: 62ch;
+		font-size: 18px;
+	}
+	.hero__cta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin: 10px 0 12px;
+	}
+	.hero__trust {
+		margin: 0;
+		max-width: 78ch;
+		font-size: 14px;
+	}
+	.section {
+		padding: 18px 0;
+	}
+	.h2 {
+		margin: 0 0 12px;
+		font-size: 22px;
+		letter-spacing: -0.02em;
+	}
+	.tiles {
+		margin-top: 8px;
+	}
+	.tile {
+		padding: 14px 14px;
+		text-decoration: none;
+		color: inherit;
+		display: grid;
+		gap: 8px;
+		transition: transform 120ms ease, border-color 120ms ease;
+	}
+	.tile:hover {
+		transform: translateY(-1px);
+		border-color: rgba(47, 106, 68, 0.35);
+	}
+	.tile__t {
+		font-weight: 900;
+		letter-spacing: -0.02em;
+	}
+	.tile__m {
+		font-size: 14px;
+		line-height: 1.45;
+	}
+	.list {
+		margin: 0;
+		padding-left: 18px;
+		display: grid;
+		gap: 10px;
+		max-width: 78ch;
+		font-weight: 650;
+	}
+	.section__panel :global(.panel) {
+		margin-top: 12px;
+	}
+</style>

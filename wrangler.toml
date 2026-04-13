@@ -1,0 +1,6 @@
+# Cloudflare Pages — статичний вивід Astro (`dist/`).
+# Локально: npx wrangler pages deploy dist --project-name=YOUR_PROJECT
+# Або підключіть репозиторій у Dashboard Pages і задайте build command: npm run build:ci
+name = "agronom-com-ua"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-04-01"

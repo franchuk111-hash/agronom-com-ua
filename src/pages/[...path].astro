@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialNote from '../components/EditorialNote.astro';
+import AffiliatePanel from '../components/AffiliatePanel.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { getAllPages, type PageDef } from '../data/registry';
+import { breadcrumbsForPage, breadcrumbSchemaItems } from '../lib/nav';
+import { SITE } from '../data/site';
+import {
+	articleSchema,
+	breadcrumbSchema,
+	collectionPageSchema,
+	faqPageSchema,
+	webPageSchema,
+} from '../lib/schema';
+
+export function getStaticPaths() {
+	return getAllPages().map((page) => ({
+		params: { path: page.slug },
+		props: { page },
+	}));
+}
+
+export const prerender = true;
+
+const { page } = Astro.props as { page: PageDef };
+if (!page) throw new Error('Missing page props for [...path] route');
+
+const canonicalPath = `/${page.slug}/`;
+const url = new URL(canonicalPath, `https://${SITE.domain}/`).toString();
+
+const crumbs = breadcrumbsForPage(page);
+const showEditorial = !['legal', 'trust', 'faq'].includes(page.type);
+const showAffiliate = ['category', 'subcategory', 'guide', 'seasonal', 'commercial', 'comparison'].includes(page.type);
+
+const extra: unknown[] = [breadcrumbSchema(breadcrumbSchemaItems(page))];
+
+extra.push(
+	webPageSchema({
+		id: `${url}#webpage`,
+		url,
+		name: page.h1,
+		description: page.description,
+	}),
+);
+
+if (['category', 'subcategory', 'hub'].includes(page.type)) {
+	extra.push(
+		collectionPageSchema({
+			id: `${url}#collection`,
+			url,
+			name: page.h1,
+			description: page.description,
+		}),
+	);
+}
+
+if (page.faq?.length) {
+	extra.push(faqPageSchema(page.faq.map((x) => ({ question: x.q, answer: x.a }))));
+}
+
+const isArticleOg = ['guide', 'seasonal', 'comparison', 'commercial'].includes(page.type);
+const published = page.datePublished ?? '2026-04-13';
+const modified = page.dateModified ?? page.datePublished ?? '2026-04-13';
+const toKyivIso = (d: string) => `${d}T08:00:00+03:00`;
+
+if (isArticleOg) {
+	extra.push(
+		articleSchema({
+			url,
+			headline: page.h1,
+			description: page.description,
+			datePublished: published,
+			dateModified: modified,
+		}),
+	);
+}
+
+const scope = page.slug.replaceAll('/', '_');
+const affiliateHeading =
+	page.type === 'comparison'
+		? 'Перейдіть до магазинів і звірте умови'
+		: page.type === 'commercial'
+			? 'Зручно перевірити асортимент і ціни'
+			: 'Якщо вже визначились із вибором — перевірте наявність';
+---
+
+<BaseLayout
+	title={page.title}
+	description={page.description}
+	{canonicalPath}
+	extraJsonLd={extra}
+	ogType={isArticleOg ? 'article' : 'website'}
+	articlePublished={isArticleOg ? toKyivIso(published) : undefined}
+	articleModified={isArticleOg ? toKyivIso(modified) : undefined}
+>
+	<Breadcrumbs items={crumbs} />
+
+	<section class="container hero">
+		<h1>{page.h1}</h1>
+		<p class="muted hero__lead">{page.description}</p>
+	</section>
+
+	<article class="container article">
+		{showEditorial ? <EditorialNote datePublished={page.datePublished} dateModified={page.dateModified} /> : null}
+
+		{
+			page.blocks.map((b) => (
+				<section class="block">
+					<h2>{b.h2}</h2>
+					{b.ps.map((p) => (
+						<p>{p}</p>
+					))}
+				</section>
+			))
+		}
+
+		{
+			page.faq?.length ? (
+				<section class="faq" aria-label="FAQ">
+					<h2>FAQ</h2>
+					<div class="faq__grid">
+						{page.faq.map((item) => (
+							<details class="faq__item card">
+								<summary>{item.q}</summary>
+								<p class="muted">{item.a}</p>
+							</details>
+						))}
+					</div>
+				</section>
+			) : null
+		}
+
+		<RelatedLinks slugs={page.related} />
+
+		{showAffiliate ? <AffiliatePanel scope={scope} heading={affiliateHeading} /> : null}
+	</article>
+</BaseLayout>
+
+<style>
+	.hero {
+		padding: 10px 0 8px;
+	}
+	.hero h1 {
+		margin: 0 0 10px;
+		font-size: clamp(28px, 4vw, 44px);
+		line-height: 1.12;
+		letter-spacing: -0.03em;
+		color: var(--green-900);
+	}
+	.hero__lead {
+		margin: 0;
+		max-width: 78ch;
+		font-size: 18px;
+	}
+	.article {
+		padding-bottom: 44px;
+	}
+	.block h2 {
+		margin: 22px 0 10px;
+		font-size: 22px;
+		letter-spacing: -0.02em;
+	}
+	.block p {
+		margin: 0 0 10px;
+		max-width: 78ch;
+	}
+	.faq h2 {
+		margin: 26px 0 12px;
+		font-size: 22px;
+		letter-spacing: -0.02em;
+	}
+	.faq__grid {
+		display: grid;
+		gap: 10px;
+	}
+	.faq__item {
+		padding: 12px 14px;
+	}
+	.faq__item summary {
+		cursor: pointer;
+		font-weight: 800;
+	}
+	.faq__item p {
+		margin: 10px 0 0;
+	}
+</style>

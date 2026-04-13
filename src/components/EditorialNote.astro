@@ -1,0 +1,64 @@
+---
+type Props = {
+	datePublished?: string;
+	dateModified?: string;
+};
+
+const { datePublished, dateModified } = Astro.props as Props;
+---
+
+<div class="note card">
+	<div class="note__title">Редакція Agronom</div>
+	<p class="muted note__p">
+		Матеріал готується як практичний гід. Якщо ви помітили неточність — напишіть нам, і ми оновимо сторінку.
+	</p>
+	{
+		datePublished || dateModified ? (
+			<dl class="note__dl">
+				{datePublished ? (
+					<>
+						<dt>Опубліковано</dt>
+						<dd>{datePublished}</dd>
+					</>
+				) : null}
+				{dateModified ? (
+					<>
+						<dt>Оновлено</dt>
+						<dd>{dateModified}</dd>
+					</>
+				) : null}
+			</dl>
+		) : null
+	}
+</div>
+
+<style>
+	.note {
+		padding: 14px 16px;
+		margin: 18px 0 22px;
+	}
+	.note__title {
+		font-weight: 850;
+		letter-spacing: -0.01em;
+		margin-bottom: 6px;
+	}
+	.note__p {
+		margin: 0 0 10px;
+		font-size: 14px;
+	}
+	.note__dl {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 6px 12px;
+		margin: 0;
+		font-size: 13px;
+		color: var(--muted);
+	}
+	.note__dl dt {
+		font-weight: 700;
+		color: var(--text);
+	}
+	.note__dl dd {
+		margin: 0;
+	}
+</style>

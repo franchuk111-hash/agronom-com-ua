@@ -1,0 +1,57 @@
+---
+import type { Crumb } from '../lib/nav';
+
+type Props = { items: readonly Crumb[] };
+
+const { items } = Astro.props as Props;
+---
+
+<nav class="crumbs container" aria-label="Хлібні крихти">
+	<ol class="crumbs__list">
+		{
+			items.map((it, idx) => (
+				<li class="crumbs__item">
+					{it.href && idx < items.length - 1 ? (
+						<a href={it.href}>{it.name}</a>
+					) : (
+						<span aria-current={idx === items.length - 1 ? 'page' : undefined}>{it.name}</span>
+					)}
+					{idx < items.length - 1 ? <span class="crumbs__sep" aria-hidden="true">/</span> : null}
+				</li>
+			))
+		}
+	</ol>
+</nav>
+
+<style>
+	.crumbs {
+		padding: 14px 0 6px;
+	}
+	.crumbs__list {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		align-items: center;
+		padding: 0;
+		margin: 0;
+		font-size: 13px;
+		color: var(--muted);
+	}
+	.crumbs__item {
+		display: inline-flex;
+		gap: 8px;
+		align-items: center;
+	}
+	.crumbs__sep {
+		opacity: 0.55;
+	}
+	.crumbs a {
+		color: inherit;
+		text-decoration: none;
+		font-weight: 650;
+	}
+	.crumbs a:hover {
+		color: var(--green-700);
+	}
+</style>

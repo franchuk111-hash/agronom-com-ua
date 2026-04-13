@@ -1,0 +1,66 @@
+---
+import { getPageBySlug } from '../data/registry';
+import { pagePath } from '../lib/nav';
+
+type Props = { slugs: readonly string[] };
+
+const { slugs } = Astro.props as Props;
+
+const items = slugs
+	.map((slug) => {
+		const p = getPageBySlug(slug);
+		if (!p) return null;
+		return { href: pagePath(slug), title: p.h1 };
+	})
+	.filter(Boolean) as { href: string; title: string }[];
+---
+
+{
+	items.length ? (
+		<section class="related" aria-label="Корисно разом">
+			<h2 class="related__h">Далі по темі</h2>
+			<ul class="related__list">
+				{items.map((it) => (
+					<li>
+						<a class="related__a" href={it.href}>
+							{it.title}
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	) : null
+}
+
+<style>
+	.related {
+		margin-top: 26px;
+		padding-top: 18px;
+		border-top: 1px solid var(--line);
+	}
+	.related__h {
+		margin: 0 0 10px;
+		font-size: 18px;
+		letter-spacing: -0.02em;
+	}
+	.related__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 10px;
+	}
+	.related__a {
+		display: inline-flex;
+		padding: 10px 12px;
+		border-radius: 12px;
+		border: 1px solid var(--line);
+		background: color-mix(in oklab, var(--surface) 88%, transparent);
+		text-decoration: none;
+		color: inherit;
+		font-weight: 650;
+	}
+	.related__a:hover {
+		border-color: rgba(47, 106, 68, 0.35);
+	}
+</style>

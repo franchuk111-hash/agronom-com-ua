@@ -1,0 +1,128 @@
+---
+import { partnerUrl, type Merchant } from '../lib/affiliate';
+
+type Props = {
+	scope: string;
+	heading?: string;
+};
+
+const { scope, heading = 'Далі: перевірте наявність і ціну' } = Astro.props as Props;
+
+const florium = partnerUrl('florium');
+const agromarket = partnerUrl('agromarket');
+
+const buttons: readonly { label: string; href: string; merchant: Merchant; subid: string }[] = [
+	{ label: 'Перейти до Флоріум', href: florium, merchant: 'florium', subid: `${scope}_florium` },
+	{ label: 'Перейти до Агромаркет', href: agromarket, merchant: 'agromarket', subid: `${scope}_agromarket` },
+] as const;
+
+const floriumPriceSubid = `${scope}_florium_price`;
+const agromarketStockSubid = `${scope}_agromarket_stock`;
+---
+
+<aside class="panel card" aria-label="Партнерські магазини">
+	<div class="panel__head">
+		<h2 class="panel__h">{heading}</h2>
+		<p class="muted panel__sub">
+			Ми не інтернет-магазин: ви підтверджуєте умови покупки на сайті продавця. Agronom може отримувати партнерську
+			винагороду — це не змінює логіку наших гідів.
+		</p>
+	</div>
+
+	<div class="panel__grid">
+		<a
+			class="btn btn-primary"
+			href={buttons[0].href}
+			rel="sponsored noopener noreferrer"
+			target="_blank"
+			data-partner={buttons[0].merchant}
+			data-subid={buttons[0].subid}
+		>
+			{buttons[0].label}
+		</a>
+		<a
+			class="btn btn-primary"
+			href={buttons[1].href}
+			rel="sponsored noopener noreferrer"
+			target="_blank"
+			data-partner={buttons[1].merchant}
+			data-subid={buttons[1].subid}
+		>
+			{buttons[1].label}
+		</a>
+	</div>
+
+	<div class="panel__links" aria-label="Додаткові дії">
+		<a
+			class="muted link-quiet"
+			href={florium}
+			rel="sponsored noopener noreferrer"
+			target="_blank"
+			data-partner="florium"
+			data-subid={floriumPriceSubid}
+		>
+			Дізнатись актуальну ціну у Флоріум
+		</a>
+		<span class="muted">·</span>
+		<a
+			class="muted link-quiet"
+			href={agromarket}
+			rel="sponsored noopener noreferrer"
+			target="_blank"
+			data-partner="agromarket"
+			data-subid={agromarketStockSubid}
+		>
+			Перевірити наявність в Агромаркет
+		</a>
+	</div>
+
+	<p class="muted panel__fine">
+		Підказка: збережіть сторінку Agronom у закладках і повертайтесь до чеклістів перед сезонними покупками.
+	</p>
+</aside>
+
+<style>
+	.panel {
+		padding: 16px;
+		margin-top: 22px;
+		border-color: color-mix(in oklab, var(--line) 70%, rgba(47, 106, 68, 0.25));
+	}
+	.panel__head {
+		margin-bottom: 12px;
+	}
+	.panel__h {
+		margin: 0 0 8px;
+		font-size: 18px;
+		letter-spacing: -0.02em;
+	}
+	.panel__sub {
+		margin: 0;
+		font-size: 14px;
+		max-width: 85ch;
+	}
+	.panel__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 10px;
+	}
+	.panel__links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 10px;
+		margin-top: 10px;
+		font-size: 13px;
+	}
+	.link-quiet {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+	@media (max-width: 720px) {
+		.panel__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	.panel__fine {
+		margin: 12px 0 0;
+		font-size: 13px;
+	}
+</style>
