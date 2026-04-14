@@ -50,5 +50,7 @@ jobs:
         env:
           ASTRO_TELEMETRY_DISABLED: '1'
 
-      - name: Deploy dist to Vercel (production)
-        run: npx vercel@39.2.0 deploy dist --prod --yes --token="$VERCEL_TOKEN"
+      # Статичний dist без package.json — деплой з кореня dist (без віддаленого npm ci).
+      - name: Deploy static dist to Vercel (production)
+        working-directory: dist
+        run: npx vercel@39.2.0 deploy --prod --yes --token="$VERCEL_TOKEN"
