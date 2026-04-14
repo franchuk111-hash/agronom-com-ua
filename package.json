@@ -1,5 +1,5 @@
 {
-  "name": "agronom",
+  "name": "argonom",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -11,7 +11,7 @@
     "build:ci": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "build:vercel": "npm run check:registry && npm run build:ci",
     "check:registry": "tsx scripts/check-registry.ts",
-    "pages:deploy": "npm run build:ci && wrangler pages deploy dist --project-name=agronom-com-ua --branch=main",
+    "pages:deploy": "npm run build:ci && wrangler pages deploy dist --project-name=argonom-com-ua --branch=main",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -61,7 +61,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'blog',
 		type: 'hub',
-		title: 'Матеріали та гіди | Agronom',
+		title: 'Матеріали та гіди | Argonom',
 		description: 'Добірка практичних матеріалів про саджанці, насіння, добрива та сезонні роботи.',
 		h1: 'Матеріали',
 		related: ['yak-obraty-sadzhantsi', 'yak-obraty-nasinnia-dlia-horodu', 'porivniannia', 'sezonni-porady', 'de-kupyty'],
@@ -78,16 +78,16 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'faq',
 		type: 'faq',
-		title: 'FAQ | Agronom',
-		description: 'Відповіді на часті питання про Agronom, партнерські посилання та як користуватися матеріалами.',
+		title: 'FAQ | Argonom',
+		description: 'Відповіді на часті питання про Argonom, партнерські посилання та як користуватися матеріалами.',
 		h1: 'Часті запитання',
 		related: ['pro-nas', 'affiliate-disclaimer', 'kontakty', 'yak-obraty-sadzhantsi'],
 		datePublished: D,
 		dateModified: D,
-		blocks: [b('Про проєкт', 'Agronom — незалежний контентний ресурс. Ми не є інтернет-магазином.')],
+		blocks: [b('Про проєкт', 'Argonom — незалежний контентний ресурс. Ми не є інтернет-магазином.')],
 		faq: [
 			{
-				q: 'Чи є Agronom магазином?',
+				q: 'Чи є Argonom магазином?',
 				a: 'Ні. Це редакційний сайт-помічник. Покупка завжди відбувається у партнерських магазинах.',
 			},
 			{
@@ -103,9 +103,9 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'pro-nas',
 		type: 'trust',
-		title: 'Про нас | Agronom',
-		description: 'Хто стоїть за Agronom, яка наша місія та як ми готуємо матеріали для читача.',
-		h1: 'Про Agronom',
+		title: 'Про нас | Argonom',
+		description: 'Хто стоїть за Argonom, яка наша місія та як ми готуємо матеріали для читача.',
+		h1: 'Про Argonom',
 		related: ['redaktsiina-polityka', 'kontakty', 'affiliate-disclaimer', 'blog'],
 		datePublished: D,
 		dateModified: D,
@@ -123,8 +123,8 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'kontakty',
 		type: 'trust',
-		title: 'Контакти | Agronom',
-		description: 'Звʼяжіться з редакцією Agronom: пропозиції, уточнення та співпраця.',
+		title: 'Контакти | Argonom',
+		description: 'Звʼяжіться з редакцією Argonom: пропозиції, уточнення та співпраця.',
 		h1: 'Контакти',
 		related: ['pro-nas', 'faq', 'redaktsiina-polityka'],
 		datePublished: D,
@@ -139,8 +139,8 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'redaktsiina-polityka',
 		type: 'trust',
-		title: 'Редакційна політика | Agronom',
-		description: 'Принципи незалежності, оновлень матеріалів і корекцій на Agronom.',
+		title: 'Редакційна політика | Argonom',
+		description: 'Принципи незалежності, оновлень матеріалів і корекцій на Argonom.',
 		h1: 'Редакційна політика',
 		related: ['pro-nas', 'affiliate-disclaimer', 'faq'],
 		datePublished: D,
@@ -156,8 +156,8 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'polityka-konfidentsiinosti',
 		type: 'legal',
-		title: 'Політика конфіденційності | Agronom',
-		description: 'Які дані можуть оброблятися на agronom.com.ua та як ми ставимося до приватності.',
+		title: 'Політика конфіденційності | Argonom',
+		description: 'Які дані можуть оброблятися на argonom.com.ua та як ми ставимося до приватності.',
 		h1: 'Політика конфіденційності',
 		related: ['umovy-korystuvannia', 'kontakty', 'affiliate-disclaimer'],
 		datePublished: D,
@@ -173,8 +173,8 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'umovy-korystuvannia',
 		type: 'legal',
-		title: 'Умови користування | Agronom',
-		description: 'Правила використання матеріалів та сервісів agronom.com.ua.',
+		title: 'Умови користування | Argonom',
+		description: 'Правила використання матеріалів та сервісів argonom.com.ua.',
 		h1: 'Умови користування',
 		related: ['polityka-konfidentsiinosti', 'kontakty', 'affiliate-disclaimer'],
 		datePublished: D,
@@ -189,8 +189,8 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'affiliate-disclaimer',
 		type: 'legal',
-		title: 'Affiliate Disclaimer | Agronom',
-		description: 'Прозоре пояснення партнерських посилань на Agronom та як це впливає на контент.',
+		title: 'Affiliate Disclaimer | Argonom',
+		description: 'Прозоре пояснення партнерських посилань на Argonom та як це впливає на контент.',
 		h1: 'Affiliate Disclaimer',
 		related: ['redaktsiina-polityka', 'pro-nas', 'de-kupyty'],
 		datePublished: D,
@@ -207,7 +207,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'porivniannia',
 		type: 'hub',
-		title: 'Порівняння для садівника: магазини, сценарії, вибір | Agronom',
+		title: 'Порівняння для садівника: магазини, сценарії, вибір | Argonom',
 		description:
 			'Хаб порівнянь: нейтральні критерії, «vs» без CPA-агресії та практичні підказки, коли варто дивитись у різні магазини.',
 		h1: 'Порівняння',
@@ -236,7 +236,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sadzhantsi',
 		type: 'category',
-		title: 'Саджанці для саду та ділянки: як обрати й посадити | Agronom',
+		title: 'Саджанці для саду та ділянки: як обрати й посадити | Argonom',
 		description: 'Гід по саджанцях: терміни, якість кореневої системи, зберігання та посадка. Далі — практичні матеріали та мʼякі підказки щодо покупки.',
 		h1: 'Саджанці',
 		related: [
@@ -261,7 +261,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'nasinnia',
 		type: 'category',
-		title: 'Насіння для городу та квітника: вибір і підготовка | Agronom',
+		title: 'Насіння для городу та квітника: вибір і підготовка | Argonom',
 		description: 'Як читати пакування, що врахувати для теплиці та відкритого ґрунту, і як уникнути типових помилок при покупці насіння.',
 		h1: 'Насіння',
 		related: ['yak-obraty-nasinnia-dlia-horodu', 'nasinnia/ovochi', 'sezonni-porady/shcho-siiaty-u-berezni', 'de-kupyty/nasinnia', 'dobryva', 'zasoby-zakhystu'],
@@ -275,7 +275,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'dobryva',
 		type: 'category',
-		title: 'Добрива для саду та городу: типи, сезонність, помилки | Agronom',
+		title: 'Добрива для саду та городу: типи, сезонність, помилки | Argonom',
 		description: 'Спокійний огляд підживлення: макроелементи, органіка vs мінерал, і практичні поради без «чарівних обіцянок».',
 		h1: 'Добрива',
 		related: ['yake-dobryvo-dlia-pomidoriv', 'dobryva/dlia-ovochiv', 'sezonni-porady/najkrashchi-dobryva-na-vesnu', 'de-kupyty/dobryva', 'nasinnia', 'kvity'],
@@ -289,7 +289,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'kvity',
 		type: 'category',
-		title: 'Квіти для саду та дачі: вибір, посадка, догляд | Agronom',
+		title: 'Квіти для саду та дачі: вибір, посадка, догляд | Argonom',
 		description: 'Квіти на ділянці: багаторічники й однорічники, троянди, клумби та поєднання з іншими рослинами.',
 		h1: 'Квіти',
 		related: ['yak-vybraty-troiandy-dlia-sadu', 'bahatorichni-kvity-dlia-dachi', 'sadzhantsi/troiandy', 'nasinnia/kvity', 'sezonni-porady/shcho-sadyty-navesni', 'de-kupyty'],
@@ -303,7 +303,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yahidni-kultury',
 		type: 'category',
-		title: 'Ягідні культури: посадка, обрізка, підживлення | Agronom',
+		title: 'Ягідні культури: посадка, обрізка, підживлення | Argonom',
 		description: 'Ягідник для ділянки: лохина, смородина, малина та інше. Покроково про основні роботи і типові помилки.',
 		h1: 'Ягідні культури',
 		related: ['yak-posadyty-lokhynu', 'sadzhantsi/yahidni-kultury', 'dobryva', 'zasoby-zakhystu', 'sezonni-porady/shcho-sadyty-voseni'],
@@ -317,7 +317,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'dekoratyvni-roslyny',
 		type: 'category',
-		title: 'Декоративні рослини для ділянки | Agronom',
+		title: 'Декоративні рослини для ділянки | Argonom',
 		description: 'Як зібрати стабільний декор: форми, висота, сезонність кольору та поєднання з архітектурою двору.',
 		h1: 'Декоративні рослини',
 		related: ['kvity', 'sadzhantsi/troiandy', 'kimnatni-roslyny', 'sezonni-porady/shcho-sadyty-navesni'],
@@ -331,7 +331,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'kimnatni-roslyny',
 		type: 'category',
-		title: 'Кімнатні рослини: ґрунт, світло, полив | Agronom',
+		title: 'Кімнатні рослини: ґрунт, світло, полив | Argonom',
 		description: 'Спокійний старт для домашніх рослин: дренаж, горщики, підживлення та захист від шкідників у «квартирних» умовах.',
 		h1: 'Кімнатні рослини',
 		related: ['yak-obraty-grunt-dlia-kimnatnykh-roslyn', 'dobryva', 'kvity', 'faq', 'de-kupyty'],
@@ -345,7 +345,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'zasoby-zakhystu',
 		type: 'category',
-		title: 'Засоби захисту рослин: як обирати без паніки | Agronom',
+		title: 'Засоби захисту рослин: як обирати без паніки | Argonom',
 		description: 'Фунгіциди, інсектициди, гербіциди — мова фактів: чергування, безпека, інструкції та розумні межі.',
 		h1: 'Засоби захисту',
 		related: ['yak-obraty-zasoby-zakhystu-bez-perekruchennia', 'nasinnia/ovochi', 'dobryva/dlia-ovochiv', 'yahidni-kultury', 'instrumenty', 'de-kupyty'],
@@ -359,7 +359,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'instrumenty',
 		type: 'category',
-		title: 'Інструменти для саду й городу: базовий набір без зайвого | Agronom',
+		title: 'Інструменти для саду й городу: базовий набір без зайвого | Argonom',
 		description:
 			'Секатор і пила, граблі та штанги, крапельний полив: як зібрати мінімальний робочий набір для ділянки й не купити «красиве, але зайве».',
 		h1: 'Інструменти та супутні товари',
@@ -381,7 +381,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sezonni-porady',
 		type: 'hub',
-		title: 'Сезонні поради для саду та городу | Agronom',
+		title: 'Сезонні поради для саду та городу | Argonom',
 		description: 'Календарні підказки: що садити навесні та восени, коли сіяти, які добрива доречні у весняному циклі.',
 		h1: 'Сезонні поради',
 		related: [
@@ -402,7 +402,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sadzhantsi/plodovi-dereva',
 		type: 'subcategory',
-		title: 'Саджанці плодових дерев: вибір і посадка | Agronom',
+		title: 'Саджанці плодових дерев: вибір і посадка | Argonom',
 		description: 'Плодові дерева на ділянці: підщепа, терміни посадки, відстань і перші роки догляду.',
 		h1: 'Саджанці плодових дерев',
 		related: ['sadzhantsi', 'yak-obraty-sadzhantsi', 'yak-zberihaty-sadzhantsi-do-posadky', 'sezonni-porady/shcho-sadyty-voseni', 'de-kupyty/sadzhantsi'],
@@ -416,7 +416,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sadzhantsi/yahidni-kultury',
 		type: 'subcategory',
-		title: 'Саджанці ягідних культур | Agronom',
+		title: 'Саджанці ягідних культур | Argonom',
 		description: 'Ягідні саджанці: лохина, смородина, ожина — на що дивитись у пакуванні та як уникнути пересушування кореня.',
 		h1: 'Саджанці ягідних культур',
 		related: ['yahidni-kultury', 'yak-posadyty-lokhynu', 'sadzhantsi', 'de-kupyty/sadzhantsi', 'dobryva'],
@@ -430,7 +430,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sadzhantsi/troiandy',
 		type: 'subcategory',
-		title: 'Саджанці троянд: класи, зимостійкість, посадка | Agronom',
+		title: 'Саджанці троянд: класи, зимостійкість, посадка | Argonom',
 		description: 'Троянди з відкритим коренем чи в контейнері: як обрати для вашої ділянки та як підготувати ґрунт.',
 		h1: 'Саджанці троянд',
 		related: ['yak-vybraty-troiandy-dlia-sadu', 'yake-dobryvo-dlia-troiand', 'kvity', 'sezonni-porady/shcho-sadyty-navesni', 'de-kupyty/sadzhantsi'],
@@ -444,7 +444,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'nasinnia/ovochi',
 		type: 'subcategory',
-		title: 'Насіння овочів: теплиця vs відкритий ґрунт | Agronom',
+		title: 'Насіння овочів: теплиця vs відкритий ґрунт | Argonom',
 		description: 'Як підібрати насіння овочів під ваші умови: строки, гібриди, ризики пізніх заморозків.',
 		h1: 'Насіння овочів',
 		related: ['nasinnia', 'yak-obraty-nasinnia-dlia-horodu', 'yak-pidhotuvati-grunt-do-rosad', 'de-kupyty/nasinnia', 'dobryva/dlia-ovochiv'],
@@ -458,7 +458,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'nasinnia/kvity',
 		type: 'subcategory',
-		title: 'Насіння квітів для клумби та вазона | Agronom',
+		title: 'Насіння квітів для клумби та вазона | Argonom',
 		description: 'Квіти з насіння: строки сівби, глибина, освітлення та пересадка розсади.',
 		h1: 'Насіння квітів',
 		related: ['nasinnia', 'bahatorichni-kvity-dlia-dachi', 'kvity', 'sezonni-porady/shcho-sadyty-navesni', 'de-kupyty/nasinnia'],
@@ -472,7 +472,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'dobryva/dlia-ovochiv',
 		type: 'subcategory',
-		title: 'Добрива для овочів: старт, цвітіння, врожай | Agronom',
+		title: 'Добрива для овочів: старт, цвітіння, врожай | Argonom',
 		description: 'Підживлення овочів без фанатизму: етапи, типові дефіцити, безпека доз і сумісність.',
 		h1: 'Добрива для овочів',
 		related: ['dobryva', 'yake-dobryvo-dlia-pomidoriv', 'nasinnia/ovochi', 'zasoby-zakhystu', 'de-kupyty/dobryva'],
@@ -487,7 +487,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-obraty-sadzhantsi',
 		type: 'guide',
-		title: 'Як обрати саджанці: чекліст якості | Agronom',
+		title: 'Як обрати саджанці: чекліст якості | Argonom',
 		description: 'Чекліст для покупки саджанців: корінь, місце щеплення, вологість субстрату, документи та типові обмани.',
 		h1: 'Як обрати саджанці',
 		related: ['sadzhantsi', 'yak-zberihaty-sadzhantsi-do-posadky', 'sadzhantsi/plodovi-dereva', 'sezonni-porady/shcho-sadyty-voseni', 'de-kupyty/sadzhantsi', 'porivniannia/florium-vs-agromarket'],
@@ -502,7 +502,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-zberihaty-sadzhantsi-do-posadky',
 		type: 'guide',
-		title: 'Як зберігати саджанці до посадки | Agronom',
+		title: 'Як зберігати саджанці до посадки | Argonom',
 		description: 'Коротко про притінення, вологість, пересушування та «перезимівлювання» до весняної посадки.',
 		h1: 'Як зберігати саджанці до посадки',
 		related: ['yak-obraty-sadzhantsi', 'sadzhantsi', 'sezonni-porady/shcho-sadyty-voseni', 'sezonni-porady/shcho-sadyty-navesni', 'de-kupyty/sadzhantsi'],
@@ -516,7 +516,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-obraty-nasinnia-dlia-horodu',
 		type: 'guide',
-		title: 'Як обрати насіння для городу | Agronom',
+		title: 'Як обрати насіння для городу | Argonom',
 		description: 'Як читати пакування, що означають гібриди F1, і як підібрати насіння під ваші строки висадки.',
 		h1: 'Як обрати насіння для городу',
 		related: ['nasinnia', 'nasinnia/ovochi', 'yak-pidhotuvati-grunt-do-rosad', 'sezonni-porady/shcho-siiaty-u-berezni', 'de-kupyty/nasinnia', 'dobryva/dlia-ovochiv'],
@@ -530,7 +530,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-pidhotuvati-grunt-do-rosad',
 		type: 'guide',
-		title: 'Як підготувати ґрунт для розсади | Agronom',
+		title: 'Як підготувати ґрунт для розсади | Argonom',
 		description: 'Практична база: склад суміші, дренаж, pH в розумних межах і помилки при загортанні.',
 		h1: 'Як підготувати ґрунт для розсади',
 		related: ['nasinnia/ovochi', 'nasinnia/kvity', 'yak-obraty-nasinnia-dlia-horodu', 'yake-dobryvo-dlia-pomidoriv', 'de-kupyty/nasinnia', 'sezonni-porady/shcho-sadyty-navesni'],
@@ -544,7 +544,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yake-dobryvo-dlia-pomidoriv',
 		type: 'guide',
-		title: 'Яке добриво для помідорів обрати | Agronom',
+		title: 'Яке добриво для помідорів обрати | Argonom',
 		description: 'Томати: етапи росту, типові симптоми дефіцитів і безпечні рамки підживлення.',
 		h1: 'Яке добриво для помідорів обрати',
 		related: ['dobryva/dlia-ovochiv', 'nasinnia/ovochi', 'yak-pidhotuvati-grunt-do-rosad', 'zasoby-zakhystu', 'sezonni-porady/najkrashchi-dobryva-na-vesnu', 'de-kupyty/dobryva'],
@@ -558,7 +558,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yake-dobryvo-dlia-troiand',
 		type: 'guide',
-		title: 'Яке добриво для троянд обрати | Agronom',
+		title: 'Яке добриво для троянд обрати | Argonom',
 		description: 'Троянди: сезонність підживлення, органіка vs мінерал, і що важливо не зламати дозами.',
 		h1: 'Яке добриво для троянд обрати',
 		related: ['sadzhantsi/troiandy', 'yak-vybraty-troiandy-dlia-sadu', 'kvity', 'dobryva', 'sezonni-porady/najkrashchi-dobryva-na-vesnu', 'de-kupyty/dobryva'],
@@ -572,7 +572,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-posadyty-lokhynu',
 		type: 'guide',
-		title: 'Як посадити лохину: яма, кислотність, полив | Agronom',
+		title: 'Як посадити лохину: яма, кислотність, полив | Argonom',
 		description: 'Лохина для ділянки: підготовка ями, мульчування, перші роки формування куща.',
 		h1: 'Як посадити лохину',
 		related: ['yahidni-kultury', 'krashchi-sorty-lokhyny-dlia-ukrainy', 'sadzhantsi/yahidni-kultury', 'dobryva', 'zasoby-zakhystu', 'sezonni-porady/shcho-sadyty-voseni', 'de-kupyty/sadzhantsi'],
@@ -586,7 +586,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'krashchi-sorty-lokhyny-dlia-ukrainy',
 		type: 'guide',
-		title: 'Кращі сорти лохини для України: як читати описи | Agronom',
+		title: 'Кращі сорти лохини для України: як читати описи | Argonom',
 		description: 'Як обирати сорт лохини під ваш регіон без ілюзій: строки дозрівання, врожайність, стійкість.',
 		h1: 'Кращі сорти лохини для України',
 		related: ['yak-posadyty-lokhynu', 'yahidni-kultury', 'sadzhantsi/yahidni-kultury', 'de-kupyty/sadzhantsi', 'dobryva'],
@@ -600,7 +600,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-vybraty-troiandy-dlia-sadu',
 		type: 'guide',
-		title: 'Як вибрати троянди для саду | Agronom',
+		title: 'Як вибрати троянди для саду | Argonom',
 		description: 'Троянди: місце, сонце, вентиляція, класи кущів і зимостійкість для українських умов.',
 		h1: 'Як вибрати троянди для саду',
 		related: ['sadzhantsi/troiandy', 'yake-dobryvo-dlia-troiand', 'kvity', 'bahatorichni-kvity-dlia-dachi', 'sezonni-porady/shcho-sadyty-navesni', 'de-kupyty/sadzhantsi'],
@@ -614,7 +614,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'bahatorichni-kvity-dlia-dachi',
 		type: 'guide',
-		title: 'Багаторічні квіти для дачі: спокійний старт | Agronom',
+		title: 'Багаторічні квіти для дачі: спокійний старт | Argonom',
 		description: 'Які багаторічники дають стабільний ефект без щорічного «перезапуску» клумби.',
 		h1: 'Багаторічні квіти для дачі',
 		related: ['kvity', 'nasinnia/kvity', 'sezonni-porady/shcho-sadyty-navesni', 'yak-vybraty-troiandy-dlia-sadu', 'dekoratyvni-roslyny', 'de-kupyty/nasinnia'],
@@ -628,7 +628,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-obraty-grunt-dlia-kimnatnykh-roslyn',
 		type: 'guide',
-		title: 'Як обрати ґрунт для кімнатних рослин | Agronom',
+		title: 'Як обрати ґрунт для кімнатних рослин | Argonom',
 		description: 'Дренаж, повітряність, волога: як не купити «красиву, але вбивчу» суміш для кореня.',
 		h1: 'Як обрати ґрунт для кімнатних рослин',
 		related: ['kimnatni-roslyny', 'dobryva', 'kvity', 'faq', 'de-kupyty'],
@@ -642,7 +642,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'yak-obraty-zasoby-zakhystu-bez-perekruchennia',
 		type: 'guide',
-		title: 'Як обрати засоби захисту без плутанини | Agronom',
+		title: 'Як обрати засоби захисту без плутанини | Argonom',
 		description: 'Фунгіциди/інсектициди: режими, чергування, безпека і коли краще взагалі не «лити хімію».',
 		h1: 'Як обрати засоби захисту без плутанини',
 		related: ['zasoby-zakhystu', 'nasinnia/ovochi', 'dobryva/dlia-ovochiv', 'yake-dobryvo-dlia-pomidoriv', 'yahidni-kultury', 'sezonni-porady/shcho-siiaty-u-berezni', 'de-kupyty'],
@@ -657,7 +657,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sezonni-porady/shcho-sadyty-navesni',
 		type: 'seasonal',
-		title: 'Що садити навесні: спокійний план для ділянки | Agronom',
+		title: 'Що садити навесні: спокійний план для ділянки | Argonom',
 		description: 'Весняні роботи без паніки: пріоритети, ризики заморозків і що краще відкласти.',
 		h1: 'Що садити навесні',
 		related: ['sezonni-porady', 'nasinnia', 'kvity', 'sadzhantsi', 'sezonni-porady/shcho-siiaty-u-berezni', 'bahatorichni-kvity-dlia-dachi', 'de-kupyty/nasinnia'],
@@ -671,7 +671,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sezonni-porady/shcho-sadyty-voseni',
 		type: 'seasonal',
-		title: 'Що садити восени: вікно для дерев і ягід | Agronom',
+		title: 'Що садити восени: вікно для дерев і ягід | Argonom',
 		description: 'Осіння посадка: коли встигнути, як підготувати ґрунт і як не пересушити саджанці.',
 		h1: 'Що садити восени',
 		related: ['sezonni-porady', 'sadzhantsi', 'sadzhantsi/plodovi-dereva', 'sadzhantsi/yahidni-kultury', 'yak-zberihaty-sadzhantsi-do-posadky', 'yahidni-kultury', 'de-kupyty/sadzhantsi'],
@@ -685,7 +685,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sezonni-porady/najkrashchi-dobryva-na-vesnu',
 		type: 'seasonal',
-		title: 'Найкращі добрива на весну: без магічних обіцянок | Agronom',
+		title: 'Найкращі добрива на весну: без магічних обіцянок | Argonom',
 		description: 'Весняне підживлення: що має сенс для овочів, квітів і ягіднику — у рамках здорового глузду.',
 		h1: 'Найкращі добрива на весну',
 		related: ['sezonni-porady', 'dobryva', 'dobryva/dlia-ovochiv', 'yake-dobryvo-dlia-pomidoriv', 'yake-dobryvo-dlia-troiand', 'nasinnia/ovochi', 'de-kupyty/dobryva'],
@@ -699,7 +699,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'sezonni-porady/shcho-siiaty-u-berezni',
 		type: 'seasonal',
-		title: 'Що сіяти у березні: теплиця, підвіконня, ризики | Agronom',
+		title: 'Що сіяти у березні: теплиця, підвіконня, ризики | Argonom',
 		description: 'Березень для розсади: світло, температура, провітрювання і реалістичні строки висадки.',
 		h1: 'Що сіяти у березні',
 		related: ['sezonni-porady', 'nasinnia/ovochi', 'nasinnia/kvity', 'yak-pidhotuvati-grunt-do-rosad', 'yak-obraty-nasinnia-dlia-horodu', 'sezonni-porady/shcho-sadyty-navesni', 'de-kupyty/nasinnia'],
@@ -714,7 +714,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'de-kupyty',
 		type: 'commercial',
-		title: 'Де купити насіння, саджанці та добрива онлайн | Agronom',
+		title: 'Де купити насіння, саджанці та добрива онлайн | Argonom',
 		description: 'Чесний комерційний хаб: як обрати магазин, на що дивитись перед оплатою, і куди перейти за актуальною ціною.',
 		h1: 'Де купити',
 		related: [
@@ -731,14 +731,14 @@ export const PAGES: readonly PageDef[] = [
 		datePublished: D,
 		dateModified: D,
 		blocks: [
-			b('Ми не магазин', 'Agronom допомагає вибрати. Покупка — у партнерських магазинах, де ви підтверджуєте ціну й наявність.'),
+			b('Ми не магазин', 'Argonom допомагає вибрати. Покупка — у партнерських магазинах, де ви підтверджуєте ціну й наявність.'),
 			b('На що дивитись', 'Умови зберігання насіння, опис саджанця, політика повернення, прозорість характеристик.'),
 		],
 	},
 	{
 		slug: 'de-kupyty/sadzhantsi',
 		type: 'commercial',
-		title: 'Де купити саджанці в Україні: критерії вибору | Agronom',
+		title: 'Де купити саджанці в Україні: критерії вибору | Argonom',
 		description: 'Як безпечно купити саджанці онлайн: терміни доставки, упаковка кореня, перевірка продавця.',
 		h1: 'Де купити саджанці',
 		related: ['yak-obraty-sadzhantsi', 'yak-zberihaty-sadzhantsi-do-posadky', 'sadzhantsi', 'sadzhantsi/plodovi-dereva', 'sezonni-porady/shcho-sadyty-voseni', 'porivniannia/florium-vs-agromarket', 'de-kupyty'],
@@ -752,7 +752,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'de-kupyty/nasinnia',
 		type: 'commercial',
-		title: 'Де купити насіння: перевірка якості пакування | Agronom',
+		title: 'Де купити насіння: перевірка якості пакування | Argonom',
 		description: 'Насіння онлайн: рік фасування, умови зберігання, асортимент під теплицю/відкритий ґрунт.',
 		h1: 'Де купити насіння',
 		related: ['yak-obraty-nasinnia-dlia-horodu', 'nasinnia', 'nasinnia/ovochi', 'nasinnia/kvity', 'yak-pidhotuvati-grunt-do-rosad', 'porivniannia/florium-vs-agromarket', 'de-kupyty'],
@@ -765,7 +765,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'de-kupyty/dobryva',
 		type: 'commercial',
-		title: 'Де купити добрива для саду та городу | Agronom',
+		title: 'Де купити добрива для саду та городу | Argonom',
 		description: 'Добрива онлайн: як не помилитись з типом, дозуванням і сумісністю для вашої культури.',
 		h1: 'Де купити добрива',
 		related: ['dobryva', 'dobryva/dlia-ovochiv', 'yake-dobryvo-dlia-pomidoriv', 'yake-dobryvo-dlia-troiand', 'sezonni-porady/najkrashchi-dobryva-na-vesnu', 'porivniannia/florium-vs-agromarket', 'de-kupyty'],
@@ -778,7 +778,7 @@ export const PAGES: readonly PageDef[] = [
 	{
 		slug: 'porivniannia/florium-vs-agromarket',
 		type: 'comparison',
-		title: 'Флоріум vs Агромаркет: нейтральне порівняння для покупця | Agronom',
+		title: 'Флоріум vs Агромаркет: нейтральне порівняння для покупця | Argonom',
 		description: 'Порівняння як сервіс вибору: коли зручніше один магазин, коли інший, і що перевірити перед замовленням.',
 		h1: 'Флоріум vs Агромаркет',
 		related: [

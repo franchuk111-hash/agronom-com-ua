@@ -1,9 +1,9 @@
 export const SITE = {
-	name: 'Agronom',
-	domain: 'agronom.com.ua',
+	name: 'Argonom',
+	domain: 'argonom.com.ua',
 	lang: 'uk',
 	locale: 'uk-UA',
-	contactEmail: 'editor@agronom.com.ua',
+	contactEmail: 'editor@argonom.com.ua',
 	tagline: 'Незалежний гід по саду, городу та догляду за рослинами в Україні.',
 	defaultDescription:
 		'Практичні гіди: як обрати саджанці, насіння та добрива, коли садити й що врахувати перед покупкою. Без зайвого шуму — лише користь.',

@@ -12,8 +12,8 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="72" y="72" width="1056" height="486" rx="28" fill="#ffffff" stroke="#e6e8e3"/>
   <circle cx="170" cy="190" r="34" fill="url(#mark)"/>
-  <text x="230" y="205" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="44" fill="#1f3d2b" font-weight="800">Agronom</text>
-  <text x="230" y="255" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="22" fill="#4b554d">!04 � >@>4 � V;O=:0</text>
-  <text x="120" y="390" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="34" fill="#1b211c" font-weight="700">@0:B8G=V 3V48 157 7092>3> HC<C</text>
-  <text x="120" y="440" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="22" fill="#4b554d">agronom.com.ua</text>
+  <text x="230" y="205" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="44" fill="#1f3d2b" font-weight="800">Argonom</text>
+  <text x="230" y="255" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="22" fill="#4b554d">Незалежний гід по саду, городу та рослинам</text>
+  <text x="120" y="390" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="34" fill="#1b211c" font-weight="700">Практичні матеріали без зайвого шуму</text>
+  <text x="120" y="440" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial" font-size="22" fill="#4b554d">argonom.com.ua</text>
 </svg>

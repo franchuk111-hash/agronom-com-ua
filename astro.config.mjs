@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://agronom.com.ua',
+	site: 'https://argonom.com.ua',
 	trailingSlash: 'always',
 	integrations: [sitemap()],
 	compressHTML: true,
