@@ -1,11 +1,12 @@
+# Скопіюйте у .github/workflows/vercel-production.yml після того, як додасте GitHub токену scope `workflow`
+# (або виконайте: gh auth refresh -h github.com -s workflow).
+#
 # Продакшен на Vercel: збірка в GitHub Actions → завантаження готового dist.
 #
 # Secrets (GitHub → Settings → Secrets → Actions):
 #   VERCEL_TOKEN        https://vercel.com/account/tokens
-#   VERCEL_ORG_ID       Vercel → Project → Settings → General, або після `vercel link` у .vercel/project.json
+#   VERCEL_ORG_ID       Vercel → Project → Settings → General, або .vercel/project.json
 #   VERCEL_PROJECT_ID   те саме
-#
-# Спочатку створіть проєкт у Vercel (Import Git або CLI `vercel link`). Без цих трьох секретів job впаде — це очікувано.
 
 name: Deploy Vercel Production
 
@@ -49,6 +50,5 @@ jobs:
         env:
           ASTRO_TELEMETRY_DISABLED: '1'
 
-      # Деплой каталогу dist у вже існуючий проєкт (VERCEL_* у env).
       - name: Deploy dist to Vercel (production)
         run: npx vercel@39.2.0 deploy dist --prod --yes --token="$VERCEL_TOKEN"
