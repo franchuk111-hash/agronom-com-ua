@@ -1,4 +1,16 @@
-# Статичний сайт Astro (argonom.com.ua). Скопіюй увесь вміст dist/ у корінь сайту (public_html).
+# --- Argonom / argonom.com.ua (статичний Astro) ---
+#
+# ВАЖЛИВО:
+# 1) Заливайте НЕ папку "dist", а ВСІ ФАЙЛИ І ПІДПАПКИ зсередини dist/
+#    (у корені сайту має лежати index.html поруч з _astro, blog, faq…).
+# 2) Корінь домену в панелі = каталог, куди потрапив index.html (часто public_html).
+# 3) Якщо є службовий index.php від хостингу — перейменуйте або видаліть,
+#    щоб першим читався index.html (або залиште лише наш DirectoryIndex нижче).
+# 4) Якщо після зміни .htaccess помилка 500 — тимчасово перейменуйте цей файл у .htaccess.off
+#    і оновіть сторінку: якщо сайт ожив, напишіть підтримці хостингу увімкнути mod_rewrite.
+#
+# Якщо сайт відкривається ТІЛЬКИ як https://домен.ua/якась-папка/
+#    — у astro.config.mjs потрібен base: '/якась-папка/' і перезбірка.
 
 <IfModule mod_headers.c>
 	Header set X-Content-Type-Options "nosniff"
@@ -11,7 +23,7 @@ DirectoryIndex index.html
 	RewriteEngine On
 	RewriteBase /
 
-	# Якщо є index.html у «папці», додати кінцевий слеш (канонічні URL з trailingSlash)
+	# Канонічний слеш у кінці URL для "каталогів" з index.html
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_URI} !/$
 	RewriteCond %{REQUEST_FILENAME}/index.html -f
