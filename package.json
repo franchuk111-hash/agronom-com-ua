@@ -11,6 +11,8 @@
     "build:ci": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "build:vercel": "npm run check:registry && npm run build:ci",
     "build:hosting": "npm run check:registry && npm run build:ci",
+    "deploy:ftp": "npm run build:hosting && tsx scripts/deploy-ftp.ts",
+    "deploy:ftp:upload": "tsx scripts/deploy-ftp.ts",
     "check:registry": "tsx scripts/check-registry.ts",
     "pages:deploy": "npm run build:ci && wrangler pages deploy dist --project-name=argonom-com-ua --branch=main",
     "preview": "astro preview",
@@ -21,6 +23,7 @@
     "astro": "^6.1.5"
   },
   "devDependencies": {
+    "basic-ftp": "^5.2.2",
     "tsx": "^4.21.0",
     "wrangler": "^4.81.1"
   }
