@@ -1,0 +1,54 @@
+# Продакшен на Vercel: збірка в GitHub Actions → завантаження готового dist.
+#
+# Secrets (GitHub → Settings → Secrets → Actions):
+#   VERCEL_TOKEN        https://vercel.com/account/tokens
+#   VERCEL_ORG_ID       Vercel → Project → Settings → General, або після `vercel link` у .vercel/project.json
+#   VERCEL_PROJECT_ID   те саме
+#
+# Спочатку створіть проєкт у Vercel (Import Git або CLI `vercel link`). Без цих трьох секретів job впаде — це очікувано.
+
+name: Deploy Vercel Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate registry
+        run: npm run check:registry
+
+      - name: Build static site
+        run: npm run build:ci
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+
+      # Деплой каталогу dist у вже існуючий проєкт (VERCEL_* у env).
+      - name: Deploy dist to Vercel (production)
+        run: npx vercel@39.2.0 deploy dist --prod --yes --token="$VERCEL_TOKEN"
