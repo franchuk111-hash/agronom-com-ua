@@ -10,6 +10,7 @@
     "build": "astro build",
     "build:ci": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "build:vercel": "npm run check:registry && npm run build:ci",
+    "build:hosting": "npm run check:registry && npm run build:ci",
     "check:registry": "tsx scripts/check-registry.ts",
     "pages:deploy": "npm run build:ci && wrangler pages deploy dist --project-name=argonom-com-ua --branch=main",
     "preview": "astro preview",

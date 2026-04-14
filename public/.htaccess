@@ -1,0 +1,21 @@
+# Статичний сайт Astro (argonom.com.ua). Скопіюй увесь вміст dist/ у корінь сайту (public_html).
+
+<IfModule mod_headers.c>
+	Header set X-Content-Type-Options "nosniff"
+	Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+	# Якщо є index.html у «папці», додати кінцевий слеш (канонічні URL з trailingSlash)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !/$
+	RewriteCond %{REQUEST_FILENAME}/index.html -f
+	RewriteRule ^(.*)$ $1/ [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
